@@ -105,7 +105,7 @@
             &kp TAB  &kp N1      &tab_left  &tab_right &kp C_VOL_UP    &kp HOME    &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LSHIFT   │ LCTR     │  LALT    │  LCMD    │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
-            &sk LSHIFT  &sk LCTRL  &kp LALT  &kp LCMD   &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+            &sk LSHIFT  &sk LCTRL  &sk LALT  &sk LCMD   &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  mleft   │  mdown   │  mup     │  ENTER   │
            &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE   &kp CAPS   &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP  &kp ENTER
@@ -120,13 +120,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │  [       │  {       │  (       │  ?       │   │  !       │  )       │  }       │  ]       │  `       │
-            &kp ESC    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp LBRC   &kp LBKT   &kp GRAVE
+            &kp ESC    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp RBRC   &kp RBKT   &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ^       │  =       │  _       │  $       │  *       │   │  %       │ LCMD     │  RALT    │  RCTRL   │  RSHIFT  │
            &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR   &kp ASTRK      &kp PRCNT  &sk LCMD   &sk RALT   &sk RCTRL  &sk RSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  <       │  |       │  -       │  >       │  /       │   │  \       │  #       │  @       │  │       │  ~       │
-            &kp LT     &kp PIPE   &kp MINUS   &kp GT     &kp SLASH     &kp BSLH   &kp HASH  &kp AT_SIGN &kp PIPE   &kp TILDE
+        //│  <       │  |       │  -       │  >       │  /       │   │  \       │  #       │  +       │  @       │  ~       │
+            &kp LT     &kp PIPE   &kp MINUS   &kp GT     &kp SLASH     &kp BSLH   &kp HASH   &kp PLUS &kp AT_SIGN &kp TILDE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯

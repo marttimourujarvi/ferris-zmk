@@ -71,6 +71,12 @@
         };
     };
 
+    &sk {
+        release-after-ms = <2000>;
+        quick-release;
+        /delete-property/ ignore-modifiers;
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -164,9 +170,4 @@
         };
     };
 
-    &sk {
-        release-after-ms = <2000>;
-        quick-release;
-        /delete-property/ ignore-modifiers;
-    };
 };

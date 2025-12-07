@@ -22,6 +22,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        tab_win: tab_win_macro {
+            compatible = "zmk,behavior-macro";
+            label = "TAB_WIN";
+            #binding-cells = <0>;
+            bindings = <
+                &sk LCMD
+                &kp TAB
+            >;
+        };
+
         space_left: space_left_macro {
             compatible = "zmk,behavior-macro";
             label = "SPACE_LEFT";
@@ -107,8 +117,8 @@
         //│ LSHIFT   │ LCTR     │  LALT    │  LCMD    │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
             &sk LSHIFT  &sk LCTRL  &sk LALT  &sk LCMD   &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  mleft   │  mdown   │  mup     │  ENTER   │
-           &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE   &kp CAPS   &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP  &kp ENTER
+        //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  mleft   │  DEL     │MAC GLOBE │  ENTER   │
+           &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &mmv MOVE_LEFT &kp DEL  &kp GLOBE  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans    &trans           &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯

@@ -131,8 +131,8 @@
             display-name = "Navigation Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  TAB     │  tabwin  │ TAB + L  │ TAB + R  │ VOL_UP   │   │  HOME    │  END     │ PAGE DN  │ PAGE UP  │ BACKSPACE│
-            &kp TAB  &tab_win      &tab_left  &tab_right &kp C_VOL_UP    &kp HOME    &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
+        //│  TAB     │tab_select│ TAB + L  │ TAB + R  │ VOL_UP   │   │  HOME    │  END     │ PAGE DN  │ PAGE UP  │ BACKSPACE│
+            &kp TAB  &tab_select &tab_left  &tab_right &kp C_VOL_UP    &kp HOME    &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LSHIFT   │ LCTR     │  LALT    │  LCMD    │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
             &sk LSHIFT  &sk LCTRL  &sk LALT  &sk LCMD   &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT

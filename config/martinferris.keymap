@@ -22,16 +22,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        tab_win: tab_win_macro {
-            compatible = "zmk,behavior-macro";
-            label = "TAB_WIN";
-            #binding-cells = <0>;
-            bindings = <
-                &sk LCMD
-                &kp TAB
-            >;
-        };
-
         space_left: space_left_macro {
             compatible = "zmk,behavior-macro";
             label = "SPACE_LEFT";
@@ -73,6 +63,27 @@
         };
     };
 
+    macros {
+        tab_win: tab_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        nav: nav_with_release {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo 1>
+                , <&macro_pause_for_release>
+                , <&macro_release &LCMD
+                , <&macro_release &mo 1>
+                ;
+        };
+    };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -102,7 +113,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE   &mo 1         &mo 2      &kp BSPC
+                                             &kp SPACE   &nav          &mo 2      &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

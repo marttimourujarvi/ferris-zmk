@@ -12,6 +12,16 @@
 
 / {
     behaviors {
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&kp>, <&kp>;
+        };
+
         space_left: space_left_macro {
             compatible = "zmk,behavior-macro";
             label = "SPACE_LEFT";
@@ -60,7 +70,6 @@
     &sk {
         release-after-ms = <2000>;
         quick-release;
-        /delete-property/ ignore-modifiers;
     };
 
     keymap {

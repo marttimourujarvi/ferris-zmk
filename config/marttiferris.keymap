@@ -25,7 +25,7 @@
         space_left: space_left_macro {
             compatible = "zmk,behavior-macro";
             label = "SPACE_LEFT";
-            #binding-cells = <0>
+            #binding-cells = <0>;
             bindings = <
                 &kp SPACE
                 &kp LEFT
@@ -35,7 +35,7 @@
         space_right: space_right_macro {
             compatible = "zmk,behavior-macro";
             label = "SPACE_RIGHT";
-            #binding-cells = <0>
+            #binding-cells = <0>;
             bindings = <
                 &kp SPACE
                 &kp RIGHT
@@ -45,7 +45,7 @@
         tab_left: tab_left_macro {
             compatible = "zmk,behavior-macro";
             label = "TAB_LEFT";
-            #binding-cells = <0>
+            #binding-cells = <0>;
             bindings = <
                 &kp TAB
                 &kp LEFT
@@ -55,7 +55,7 @@
         tab_right: tab_right_macro {
             compatible = "zmk,behavior-macro";
             label = "TAB_RIGHT";
-            #binding-cells = <0>
+            #binding-cells = <0>;
             bindings = <
                 &kp TAB
                 &kp RIGHT

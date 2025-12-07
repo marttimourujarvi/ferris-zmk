@@ -72,13 +72,14 @@
                 , <&macro_tap &kp TAB>
                 ;
         };
-        nav: nav_with_release {
+
+        nav_mo: nav_mo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &mo 1>
                 , <&macro_pause_for_release>
-                , <&macro_release &LCMD
+                , <&macro_release &LCMD>
                 , <&macro_release &mo 1>
                 ;
         };
@@ -113,7 +114,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE   &nav          &mo 2      &kp BSPC
+                                             &kp SPACE   &nav_mo        &mo 2      &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

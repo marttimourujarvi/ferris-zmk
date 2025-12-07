@@ -92,7 +92,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 1 ENTER &kp RSHFT      &kp SPACE  &lt 2 BSPC
+                                             &kp SPACE   &to 1         &to 2      &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -105,7 +105,7 @@
             &kp TAB  &kp N1      &tab_left  &tab_right &kp C_VOL_UP    &kp HOME    &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LSHIFT   │ LCTR     │  LALT    │  LCMD    │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
-            &sk LSHIFT  &kp LCTRL  &kp LALT  &kp LCMD   &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+            &sk LSHIFT  &sk LCTRL  &kp LALT  &kp LCMD   &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  mleft   │  mdown   │  mup     │  ENTER   │
            &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE   &kp CAPS   &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP  &kp ENTER
@@ -123,7 +123,7 @@
             &kp ESC    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp LBRC   &kp LBKT   &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ^       │  =       │  _       │  $       │  *       │   │  %       │ LCMD     │  RALT    │  RCTRL   │  RSHIFT  │
-           &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR   &kp ASTRK      &kp PRCNT  &kp LCMD   &kp RALT   &kp RCTRL  &kp RSHFT
+           &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR   &kp ASTRK      &kp PRCNT  &sk LCMD   &sk RALT   &sk RCTRL  &sk RSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  <       │  |       │  -       │  >       │  /       │   │  \       │  #       │  @       │  │       │  ~       │
             &kp LT     &kp PIPE   &kp MINUS   &kp GT     &kp SLASH     &kp BSLH   &kp HASH  &kp AT_SIGN &kp PIPE   &kp TILDE
@@ -141,7 +141,7 @@
             &kp N7    &kp N5     &kp N3     &kp N1      &kp N0         &kp N8     &kp N0     &kp N2     &kp N4     &kp N6
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LSHIFT   │ LCTR     │  LALT    │  LCMD    │ F11      │   │  F10     │ LCMD     │  RALT    │  RCTRL   │  RSHIFT  │
-           &sk LSHIFT  &kp LCTRL  &kp LALT  &kp LCMD    &kp F11       &kp F10    &kp LCMD   &kp RALT   &kp RCTRL  &sk  RSHFT
+           &sk LSHIFT  &sk LCTRL  &sk LALT  &sk LCMD    &kp F11       &kp F10    &sk LCMD   &sk RALT   &sk RCTRL  &sk  RSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  F7      │  F5      │  F3        │ F1     │  F9      │   │  F8      │  F12     │  F2      │  F4      │  F6      │
             &kp F7     &kp F5     &kp F1     &kp F1     &kp F9         &kp F8     &kp F12     &kp F2     &kp F4     &kp F6

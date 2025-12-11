@@ -113,7 +113,7 @@
             display-name = "Default Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  ;       │
+        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  :       │
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │   O      │
@@ -122,7 +122,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE   &mo 1         &mo 2      &kp BSPC
+                                              &mo 1     &kp SPACE     &kp LSHIFT   &mo 2      
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -131,14 +131,14 @@
             display-name = "Navigation Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  TAB     │tab_select│ TAB + L  │ TAB + R  │ VOL_UP   │   │  HOME    │  END     │ PAGE DN  │ PAGE UP  │ BACKSPACE│
-            &kp TAB  &tab_select &tab_left  &tab_right &kp C_VOL_UP    &kp HOME    &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
+        //│  ESC     │ TAB      │tab_select│ TAB + R  │ VOL_UP   │   │  HOME    │  END     │ PAGE DN  │ PAGE UP  │ BACKSPACE│
+            &kp ESC   &kp TAB   &tab_select &tab_right &kp C_VOL_UP    &kp HOME    &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LSHIFT   │ LCTR     │  LALT    │  LCMD    │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
             &sk LSHIFT  &sk LCTRL  &sk LALT  &sk LCMD   &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  mleft   │  DEL     │MAC GLOBE │  ENTER   │
-           &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &mmv MOVE_LEFT &kp DEL  &kp GLOBE  &kp ENTER
+        //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  REPEAT  │  DEL     │MAC GLOBE │  ENTER   │
+           &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL  &kp GLOBE  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans    &trans           &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -149,8 +149,8 @@
             display-name = "Symbolic Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │  [       │  {       │  (       │  ?       │   │  !       │  )       │  }       │  ]       │  `       │
-            &kp ESC    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp RBRC   &kp RBKT   &kp GRAVE
+        //│ SQT      │  [       │  {       │  (       │  ?       │   │  !       │  )       │  }       │  ]       │  DQT     │
+            &kp SQT    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp RBRC   &kp RBKT    &kp DQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ^       │  =       │  _       │  $       │  *       │   │  %       │ LCMD     │  RALT    │  RCTRL   │  RSHIFT  │
            &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR   &kp ASTRK      &kp PRCNT  &sk LCMD   &sk RALT   &sk RCTRL  &sk RSHFT
@@ -168,7 +168,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  7       │  5       │  3       │  1       │  9       │   │  8       │  0       │  2       │  4       │  6       │
-            &kp N7    &kp N5     &kp N3     &kp N1      &kp N0         &kp N8     &kp N0     &kp N2     &kp N4     &kp N6
+            &kp N7    &kp N5     &kp N3     &kp N1      &kp N9         &kp N8     &kp N0     &kp N2     &kp N4     &kp N6
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LSHIFT   │ LCTR     │  LALT    │  LCMD    │ F11      │   │  F10     │ LCMD     │  RALT    │  RCTRL   │  RSHIFT  │
            &sk LSHIFT  &sk LCTRL  &sk LALT  &sk LCMD    &kp F11       &kp F10    &sk LCMD   &sk RALT   &sk RCTRL  &sk  RSHFT
@@ -176,7 +176,7 @@
         //│  F7      │  F5      │  F3        │ F1     │  F9      │   │  F8      │  F12     │  F2      │  F4      │  F6      │
             &kp F7     &kp F5     &kp F1     &kp F1     &kp F9         &kp F8     &kp F12     &kp F2     &kp F4     &kp F6
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &to 4           &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

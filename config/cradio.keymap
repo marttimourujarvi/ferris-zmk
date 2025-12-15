@@ -141,12 +141,12 @@
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │   O      │
-         &hml LCTRL A &hml LGUI R &kp S      &kp T     &kp G           &kp M    &hmr RGUI N  &kp E       &kp I    &hmr RCTRL O
+        &hml LSHFT A &hml LCTRL R &hmr LALT S &hml LGUI T  &kp G         &kp M   &hmr RGUI N &hmr RALT E &hmr RCTRL I &hmr RSHFT O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 1 SPACE &kp LSHFT     &kp ENTER  &lt 2 BSPC         
+                                            &lt 1 SPACE &kp TAB       &kp ENTER  &lt 2 BSPC         
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

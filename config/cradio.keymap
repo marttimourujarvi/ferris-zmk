@@ -137,8 +137,8 @@
             display-name = "Default Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  :       │
-            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
+        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  -       │
+            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp MINUS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │   O      │
         &hml LSHFT A &hml LCTRL R &hmr LALT S &hml LGUI T  &kp G         &kp M   &hmr RGUI N &hmr RALT E &hmr RCTRL I &hmr RSHFT O
@@ -174,14 +174,14 @@
             display-name = "Symbolic Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ SQT      │  [       │  {       │  (       │  ?       │   │  !       │  )       │  }       │  ]       │  DQT     │
-            &kp SQT    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp RBRC   &kp RBKT    &kp DQT
+        //│  :       │  [       │  {       │  (       │  ?       │   │  !       │  )       │  }       │  ]       │  DQT     │
+            &kp COLON    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp RBRC   &kp RBKT  &kp DQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ^       │  =       │  _       │  $       │  *       │   │  %       │ LCMD     │  RALT    │  RCTRL   │  RSHIFT  │
-           &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR   &kp ASTRK      &kp PRCNT  &sk LCMD   &sk RALT   &sk RCTRL  &sk RSHFT
+        //│  ^       │  =       │  _       │  $       │  *       │   │  %       │  +       │  &       │  ;       │  SQT     │
+           &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR   &kp ASTRK      &kp PRCNT   &kp PLUS   &kp AMPS   &kp SEMI   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  <       │  |       │  -       │  >       │  /       │   │  \       │  #       │  +       │  @       │  ~       │
-            &kp LT     &kp PIPE   &kp MINUS   &kp GT     &kp SLASH     &kp BSLH   &kp HASH   &kp PLUS &kp AT_SIGN &kp TILDE
+        //│  <       │  |       │  -       │  >       │  /       │   │  \       │  #       │  @       │  ~       │  `       │
+            &kp LT     &kp PIPE   &kp MINUS   &kp GT     &kp SLASH     &kp BSLH  &kp HASH  &kp AT_SIGN &kp TILDE   &kp GRAVE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯

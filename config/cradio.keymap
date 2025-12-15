@@ -14,6 +14,12 @@
     continue-list = <UNDERSCORE MINUS>;
 };
 
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+    /delete-property/ ignore-modifiers;
+};
+
 / {
     behaviors {
         ht: hold_tap {
@@ -103,12 +109,6 @@
             if-layers = <1 2>;
             then-layer = <3>;
         };
-    };
-
-    sk {
-        release-after-ms = <2000>;
-        quick-release;
-        /delete-property/ ignore-modifiers;
     };
 
     keymap {

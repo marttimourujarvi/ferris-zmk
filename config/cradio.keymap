@@ -10,6 +10,10 @@
 //#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LGUI k3  &lt 2 k4
 //#define HRMR(k1,k2,k3,k4) &lt 1 k1  &ht RGUI k2  &ht RCTRL k3  &ht RSHFT k4
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
     behaviors {
         ht: hold_tap {
@@ -122,7 +126,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE   &mo 1           &mo 2    &kp LSHIFT         
+                                            &lt 1 SPACE &kp LSHFT     &kp ENTER  &lt 2 BSPC         
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -135,12 +139,13 @@
             &kp ESC   &kp TAB   &tab_select &tab_right &kp C_VOL_UP    &kp HOME    &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LSHIFT   │ LCTR     │  LALT    │  LCMD    │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
-            &sk LSHIFT  &sk LCTRL  &sk LALT  &sk LCMD   &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+            &sk LSHIFT  &sk LCTRL  &sk LALT  &sk LCMD   &kp C_VOL_DN  &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  REPEAT  │  DEL     │MAC GLOBE │  ENTER   │
-           &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL  &kp GLOBE  &kp ENTER
+           &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans    &trans           &trans     &trans
+                                           |          |          |   |          |  DELETE  |
+                                             &trans      &trans         &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

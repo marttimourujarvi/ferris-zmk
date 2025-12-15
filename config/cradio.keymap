@@ -144,7 +144,7 @@
         //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  REPEAT  │  DEL     │MAC GLOBE │  ENTER   │
            &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           |          |          |   |          |  DELETE  |
+        //                                 |          |          |   |          |  DELETE  |
                                              &trans      &trans         &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;

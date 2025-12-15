@@ -6,10 +6,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// Home row mods macro
-//#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LGUI k3  &lt 2 k4
-//#define HRMR(k1,k2,k3,k4) &lt 1 k1  &ht RGUI k2  &ht RCTRL k3  &ht RSHFT k4
-
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
@@ -145,7 +141,7 @@
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │   O      │
-          &hml A LCTRL &hml R LCMD &kp S      &kp T     &kp G           &kp M      &kp N      &kp E    &hmr I RGUI &hmr O RCTRL
+         &hml LCTRL A &hml LGUI R &kp S      &kp T     &kp G           &kp M    &hmr RGUI N  &kp E       &kp I    &hmr RCTRL O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH

@@ -8,6 +8,7 @@ manifest:
       url-base: https://github.com/urob
     - name: locales
       url-base: https://github.com/joelspadin
+      revision: v1.1.0
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:

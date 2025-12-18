@@ -141,7 +141,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp SPACE   &lt 1 TAB  &mt &num_word ENTER &lt 2 BSPC         
+                                            &kp SPACE &lt 1 TAB        &kp ENTER &lt 2 BSPC         
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -157,7 +157,7 @@
             &kp LG(C)  &kp LG(X)  &kp LG(Z)  &kp LG(V) &kp C_VOL_DN  &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  REPEAT  │  DEL     │MAC GLOBE │  ENTER   │
-           &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
+           &num_word &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &trans      &trans         &trans     &trans

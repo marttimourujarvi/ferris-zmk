@@ -7,7 +7,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
+    continue-list = <UNDERSCORE MINUS BACKSPACE>;
 };
 
 &sk {
@@ -18,16 +18,6 @@
 
 / {
     behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&kp>;
-        };
-
         space_left: space_left_macro {
             compatible = "zmk,behavior-macro";
             label = "SPACE_LEFT";
@@ -146,7 +136,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp SPACE   &lt 1 TAB     &lt 2 ENTER &kp BSPC         
+                                            &lt 1 SPACE &kp LSHFT     &kp ENTER  &lt 2 BSPC         
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -164,8 +154,8 @@
         //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  REPEAT  │  DEL     │MAC GLOBE │  ENTER   │
            &space_left &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |  DELETE  |
-                                             &trans      &trans         &trans     &kp DEL
+        //                                 |          |          |   |          |          |
+                                             &trans      &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

@@ -24,6 +24,5 @@ manifest:
       revision: v1.1.0
     - name: zmk-adaptive-key
       remote: urob
-      revision: v0.3  
   self:
     path: config

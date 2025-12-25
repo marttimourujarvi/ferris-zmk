@@ -16,6 +16,9 @@ manifest:
       import: app/west.yml
     - name: zmk-auto-layer
       remote: urob
+    - name: zmk-helpers
+      remote: urob
+      revision: main
     - name: zmk-locales
       remote: locales
       revision: v1.1.0

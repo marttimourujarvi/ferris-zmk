@@ -161,7 +161,7 @@ ZMK_ADAPTIVE_KEY(
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp TAB  &lt 1 SPACE     &lt 2 ENTER  MAGIC_SHIFT         
+                                            &lt 1 SPACE  &kp TAB    MAGIC_SHIFT &lt 2 ENTER           
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -180,7 +180,7 @@ ZMK_ADAPTIVE_KEY(
            &num_word &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                             &trans      &trans         &trans     &trans
+                                             &trans      &to 4         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -198,7 +198,7 @@ ZMK_ADAPTIVE_KEY(
         //│  <       │  |       │  -       │  >       │  /       │   │  \       │  #       │  @       │  ~       │  `       │
             &kp LT     &kp PIPE   &kp MINUS   &kp GT     &kp SLASH     &kp BSLH  &kp HASH  &kp AT_SIGN &kp TILDE   &kp GRAVE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans        &trans     &trans
+                                             &trans     &trans         &to 4      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -216,7 +216,7 @@ ZMK_ADAPTIVE_KEY(
         //│  BSPC    │  F5      │  F3      │ F1       │  F11     │   │  F10     │  minus   │  comma   │  dot     │  BSPC    │
             &kp BSPC   &kp F5     &kp F1     &kp F1     &kp F11        &kp F10     &kp MINUS  &kp COMMA  &kp DOT   &kp BSPC 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &to 4     &trans         &trans     &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

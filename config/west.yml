@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/urob
     - name: locales
       url-base: https://github.com/joelspadin
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -24,5 +26,8 @@ manifest:
       revision: v1.1.0
     - name: zmk-adaptive-key
       remote: urob
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: main
   self:
     path: config

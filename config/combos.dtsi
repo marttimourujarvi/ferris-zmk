@@ -13,4 +13,4 @@
 #define COMBO_IDLE_SLOW 50
 
 /* Horizontal combos - right hand */
-ZMK_COMBO(bspc,  &kp BSPC,     RT1 RT2,     0 1 2 3, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+//ZMK_COMBO(bspc,  &kp BSPC,     RT1 RT2,     0 1 2 3, COMBO_TERM_FAST, COMBO_IDLE_FAST)

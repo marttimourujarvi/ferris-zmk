@@ -160,7 +160,7 @@ ZMK_ADAPTIVE_KEY(
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp SPACE  &lt 1 TAB     &lt 2 ENTER  MAGIC_SHIFT         
+                                            &kp TAB  &lt 1 SPACE     &lt 2 ENTER  MAGIC_SHIFT         
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -215,7 +215,7 @@ ZMK_ADAPTIVE_KEY(
         //│  BSPC    │  F5      │  F3      │ F1       │  F11     │   │  F10     │  minus   │  comma   │  dot     │  BSPC    │
             &kp BSPC   &kp F5     &kp F1     &kp F1     &kp F11        &kp F10     &kp MINUS  &kp COMMA  &kp DOT   &kp BSPC 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to 4           &trans     &trans
+                                              &to 4     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

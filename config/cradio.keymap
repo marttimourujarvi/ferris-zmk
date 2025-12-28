@@ -118,7 +118,7 @@ ZMK_TRI_STATE(lang_swap, bindings = <&kt LCTRL>, <&kp SPACE>, <&kt LCTRL>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT>
-                , <&macro_tap &kp F>
+                , <&macro_tap &kp RIGHT> // F in bash
                 , <&macro_release &kp LALT>
                 ;
         };
@@ -128,7 +128,7 @@ ZMK_TRI_STATE(lang_swap, bindings = <&kt LCTRL>, <&kp SPACE>, <&kt LCTRL>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT>
-                , <&macro_tap &kp B>
+                , <&macro_tap &kp LEFT> // B in bash
                 , <&macro_release &kp LALT>
                 ;
         };

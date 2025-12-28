@@ -11,10 +11,9 @@
 #include "34keys.h"
 #include "combos.dtsi"
 
-
-#define KEYS_L  LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 // Left-hand keys.
-#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // Right-hand keys.
-#define THUMBS     LH1 LH0 RH0 RH1                                          // Thumbs
+#define KEYS_L   LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 // Left-hand keys.
+#define KEYS_R   RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 // Right-hand keys.
+#define THUMBS   LH1 LH0 RH0 RH1                                             // Thumbs
 
 #define QUICK_TAP_MS 175
 
@@ -32,8 +31,10 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 ZMK_HOLD_TAP(magic_shift, bindings = <&kp>, <&magic_shift_tap>;
              flavor = "balanced"; tapping-term-ms = <200>;
              quick-tap-ms = <175>;)
+
 ZMK_MOD_MORPH(magic_shift_tap, bindings = <&shift_repeat>, <&caps_word>;
               mods = <(MOD_LSFT)>;)
+
 ZMK_ADAPTIVE_KEY(
     shift_repeat, bindings = <&sk LSHFT>;
     repeat {
@@ -42,8 +43,9 @@ ZMK_ADAPTIVE_KEY(
       max-prior-idle-ms = <1200>;
       strict-modifiers;
     };)
-&caps_word { // Mods deactivate caps-word, requires PR #1451. [TODO: rebase]
-    continue-list = <UNDERSCORE MINUS BACKSPACE>;
+
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BACKSPACE>;
   /delete-property/ ignore-modifiers;
 };
 
@@ -76,22 +78,43 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             >;
         };
 
-        tab_left: tab_left_macro {
+        tab_back: tab_back {
             compatible = "zmk,behavior-macro";
-            label = "TAB_LEFT";
+            label = "TAB_BACK";
             #binding-cells = <0>;
             bindings = <
                 &kp TAB
+                &kp LSHFT
+                &kp LCTRL
+            >;
+        };
+
+        tab_forward: tab_forward {
+            compatible = "zmk,behavior-macro";
+            label = "TAB_FWD";
+            #binding-cells = <0>;
+            bindings = <
+                &kp TAB
+                &kp LCTRL
+            >;
+        };
+
+        space_b: space_b {
+            compatible = "zmk,behavior-macro";
+            label = "SPACE_B";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LCTRL
                 &kp LEFT
             >;
         };
 
-        tab_right: tab_right_macro {
+        space_f: space_f {
             compatible = "zmk,behavior-macro";
-            label = "TAB_RIGHT";
+            label = "SPACE_F";
             #binding-cells = <0>;
             bindings = <
-                &kp TAB
+                &kp LCTRL
                 &kp RIGHT
             >;
         };
@@ -111,17 +134,6 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             bindings
                 = <&macro_press &kp LCMD>
                 , <&macro_tap &kp TAB>
-                , <&macro_release &kp LCMD>
-                ;
-        };
-
-        tab_select: tab_select {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp TAB>
-                , <&macro_pause_for_release>
                 , <&macro_release &kp LCMD>
                 ;
         };
@@ -160,13 +172,13 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  ESC     │ TAB      │ swapper  │ TAB + R  │ VOL_UP   │   │  HOME    │  END     │ PAGE DN  │ PAGE UP  │ BACKSPACE│
-            &kp ESC   &kp TAB    &swapper    &tab_right &kp C_VOL_UP    &kp HOME    &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
+            &kp ESC   &kp TAB    &swapper    &tab_right &kp C_VOL_UP   &kp HOME   &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ COPY     │ CUT      │  UNDO    │ PASTE    │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
-            &kp LG(C)  &kp LG(X)  &kp LG(Z)  &kp LG(V) &kp C_VOL_DN  &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+        //│ SPACE B  │ TAB BACK │ TAB FWD  │ SPACE F  │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
+            &space_b  &tab_back  &tab_forward &space_f &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ S + L    │  S + R   │  BACK    │  FORWARD │  C_MUTE  │   │ CAPSLOCK │  REPEAT  │  DEL     │MAC GLOBE │  ENTER   │
-           &num_word &space_right &kp K_BACK &kp K_FORWARD &kp C_MUTE &kp CAPS &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
+        //│ CUT      │ COPY     │  COPY    │  PASTE   │  C_MUTE  │   │ CAPSLOCK │  REPEAT  │  DEL     │MAC GLOBE │  ENTER   │
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp C_MUTE  &kp CAPS  &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &trans      &trans         &trans     &trans

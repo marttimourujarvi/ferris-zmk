@@ -45,12 +45,16 @@ ZMK_ADAPTIVE_KEY(
     };)
 
 &caps_word {
-  continue-list = <UNDERSCORE MINUS BACKSPACE>;
+  continue-list = <UNDERSCORE MINUS BACKSPACE MAGIC_SHIFT>;
   /delete-property/ ignore-modifiers;
 };
 
 ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-              ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
+              ignored-key-positions = <LT2 RM1 RM2 RM3 RM4>;)
+
+# language swap in macos
+ZMK_TRI_STATE(lang_swap, bindings = <&kt LCTRL>, <&kp SPACE>, <&kt LCTRL>;
+              ignored-key-positions = <RB4>;)
 
 &lt {
     quick-tap-ms = <150>;
@@ -77,37 +81,6 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
                 &kp RIGHT
             >;
         };
-
-        tab_back: tab_back {
-            compatible = "zmk,behavior-macro";
-            label = "TAB_BACK";
-            #binding-cells = <0>;
-            bindings = <
-                &kp TAB
-                &kp LSHFT
-                &kp LCTRL
-            >;
-        };
-
-        space_b: space_b {
-            compatible = "zmk,behavior-macro";
-            label = "SPACE_B";
-            #binding-cells = <0>;
-            bindings = <
-                &kp LCTRL
-                &kp LEFT
-            >;
-        };
-
-        space_f: space_f {
-            compatible = "zmk,behavior-macro";
-            label = "SPACE_F";
-            #binding-cells = <0>;
-            bindings = <
-                &kp LCTRL
-                &kp RIGHT
-            >;
-        };
     };
 
     macros {
@@ -120,6 +93,69 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
                 , <&macro_release &kp LCTRL>
                 ;
         };
+
+        tab_back: tab_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        space_b: space_b {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        space_f: space_f {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        word_f: word_f {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+        word_b: word_b {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp B>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+        word_del: word_del {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
     };
 
     conditional_layers {
@@ -140,7 +176,7 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp MINUS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │   O      │
-        &hml LSHFT A &hml LCTRL R &hmr LALT S &hml LGUI T  &kp G         &kp M   &hmr RGUI N &hmr RALT E &hmr RCTRL I &hmr RSHFT O
+        &hml LSHFT A &hml LCTRL R &hmr LALT S &hml LGUI T  &kp G       &kp M   &hmr RGUI N &hmr RALT E &hmr RCTRL I &hmr RSHFT O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
@@ -154,14 +190,14 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             display-name = "Navigation Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESC     │ TAB      │ swapper  │ VOL_UP  │ VOL_UP   │   │  HOME    │  END     │ PAGE DN  │ PAGE UP  │ BACKSPACE│
-            &kp ESC   &kp TAB    &swapper   &kp C_VOL_UP &kp C_VOL_UP   &kp HOME   &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
+        //│  ESC     │ TAB      │ swapper  │ VOL_UP   │ VOL_UP   │   │  HOME    │  HOME    │ PAGE DN  │ PAGE UP  │ END      │
+            &kp ESC   &kp TAB    &swapper   &kp C_VOL_UP &kp C_VOL_UP   &kp HOME  &kp HOME   &kp PG_DN  &kp PG_UP  &kp END 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ SPACE B  │ TAB BACK │ TAB FWD  │ SPACE F  │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
-            &space_b  &tab_back  &tab_forward &space_f &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+        //│ TAB BACK │ TAB FWD  │  COPY    | PASTE    │ VOL_DOWN │   │ CAPSLOCK |  LEFT    │ DOWN     │ UP       │ RIGHT    │
+           &tab_back  &tab_forward &kp LG(C) &kp LG(V) &kp C_VOL_DN    &kp CAPS  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CUT      │ COPY     │  COPY    │  PASTE   │  C_MUTE  │   │ CAPSLOCK │  REPEAT  │  DEL     │MAC GLOBE │  ENTER   │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp C_MUTE  &kp CAPS  &key_repeat &kp DEL   &kp GLOBE  &kp ENTER
+        //│ SPACE B  │ SPACE F  │  UNDO    │  CUT     │  C_MUTE  │   │ lang_swap│  DEL     | WORD BACK| WORD FWD | WORD DEL |
+            &space_b   &space_f   &kp LG(Z)  &kp LG(X)  &kp C_MUTE     &lang_swap  &kp DEL   &word_b    &word_f    &word_del
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &trans      &trans         &trans     &trans
@@ -173,14 +209,14 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             display-name = "Symbolic Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  :       │  [       │  {       │  (       │  ?       │   │  !       │  )       │  }       │  ]       │  DQT     │
-            &kp COLON    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp RBRC   &kp RBKT  &kp DQT
+        //│  '       │  [       │  {       │  (       │  ?       │   │  !       │  )       │  }       │  ]       │  "       │
+            &kp SQT    &kp LBKT   &kp LBRC   &kp LPAR   &kp QMARK       &kp EXCL  &kp RPAR  &kp RBRC   &kp RBKT    &kp DQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ^       │  =       │  _       │  $       │  *       │   │  %       │  +       │  &       │  ;       │  SQT     │
-           &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR   &kp ASTRK      &kp PRCNT   &kp PLUS   &kp AMPS   &kp SEMI   &kp SQT
+        //│  ^       │  =       │  _       │  $       │  *       │   │  %       │  :       │  &       │  ;       │  @       │
+           &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR   &kp ASTRK      &kp PRCNT   &kp COLON  &kp AMPS   &kp SEMI  &kp AT_SIGN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  <       │  |       │  -       │  >       │  /       │   │  \       │  #       │  @       │  ~       │  `       │
-            &kp LT     &kp PIPE   &kp MINUS   &kp GT     &kp SLASH     &kp BSLH  &kp HASH  &kp AT_SIGN &kp TILDE   &kp GRAVE
+        //│  <       │  |       │  -       │  >       │  /       │   │  \       │  #       │  +       │  ~       │  `       │
+            &kp LT     &kp PIPE   &kp MINUS   &kp GT     &kp SLASH     &kp BSLH  &kp HASH  &kp PLUS   &kp TILDE   &kp GRAVE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -194,8 +230,8 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         //│  7       │  5       │  3       │  1       │  9       │   │  8       │  0       │  2       │  4       │  6       │
             &kp N7    &kp N5     &kp N3     &kp N1      &kp N9         &kp N8     &kp N0     &kp N2     &kp N4     &kp N6
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  BSPC    │  .       │  ,       │  -       │  F11     │   │  F10     │  -       │  ,       │  .       │  BSPC    │
-            &kp BSPC   &kp DOT   &kp COMMA  &kp MINUS   &kp F11        &kp F10    &kp MINUS  &kp COMMA  &kp DOT   &kp BSPC 
+        //│  BSPC    │  .       │  ,       │  -       │  F11     │   │  F10     │  -       │  .       │  ,       │  BSPC    │
+            &kp BSPC   &kp DOT   &kp COMMA  &kp MINUS   &kp F11        &kp F10    &kp MINUS  &kp DOT   &kp COMMA   &kp BSPC 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  F7      │  F5      │  F3      │ F1       │  F9      │   │  F8      │  F12     │  F2      │  F4      │  F6      │
             &kp F7     &kp F5     &kp F1     &kp F1     &kp F9         &kp F8     &kp F12     &kp F2     &kp F4     &kp F6

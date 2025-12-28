@@ -171,8 +171,8 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             display-name = "Navigation Layer";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESC     │ TAB      │ swapper  │ TAB + R  │ VOL_UP   │   │  HOME    │  END     │ PAGE DN  │ PAGE UP  │ BACKSPACE│
-            &kp ESC   &kp TAB    &swapper    &tab_right &kp C_VOL_UP   &kp HOME   &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
+        //│  ESC     │ TAB      │ swapper  │ VOL_UP  │ VOL_UP   │   │  HOME    │  END     │ PAGE DN  │ PAGE UP  │ BACKSPACE│
+            &kp ESC   &kp TAB    &swapper   &kp C_VOL_UP &kp C_VOL_UP   &kp HOME   &kp END   &kp PG_DN  &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ SPACE B  │ TAB BACK │ TAB FWD  │ SPACE F  │ VOL_DOWN │   │ CAPS MOD |  LEFT    │ DOWN     │ UP       │ RIGHT    │
             &space_b  &tab_back  &tab_forward &space_f &kp C_VOL_DN    &caps_word  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT

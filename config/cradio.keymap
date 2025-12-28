@@ -45,7 +45,7 @@ ZMK_ADAPTIVE_KEY(
     };)
 
 &caps_word {
-  continue-list = <UNDERSCORE MINUS BACKSPACE MAGIC_SHIFT>;
+  continue-list = <UNDERSCORE MINUS BACKSPACE LSHFT RSHFT>;
   /delete-property/ ignore-modifiers;
 };
 

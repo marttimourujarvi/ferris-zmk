@@ -89,16 +89,6 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             >;
         };
 
-        tab_forward: tab_forward {
-            compatible = "zmk,behavior-macro";
-            label = "TAB_FWD";
-            #binding-cells = <0>;
-            bindings = <
-                &kp TAB
-                &kp LCTRL
-            >;
-        };
-
         space_b: space_b {
             compatible = "zmk,behavior-macro";
             label = "SPACE_B";
@@ -128,13 +118,13 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
     };
 
     macros {
-        tab_win: tab_win {
+        tab_forward: tab_forward {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LCMD>
+                = <&macro_press &kp CTRL>
                 , <&macro_tap &kp TAB>
-                , <&macro_release &kp LCMD>
+                , <&macro_release &kp CTRL>
                 ;
         };
     };

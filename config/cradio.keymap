@@ -68,26 +68,6 @@ ZMK_TRI_STATE(lang_swap, bindings = <&kt LCTRL>, <&kp SPACE>, <&kt LCTRL>;
             bindings = <&kp MINUS>, <&kp UNDERSCORE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        space_left: space_left_macro {
-            compatible = "zmk,behavior-macro";
-            label = "SPACE_LEFT";
-            #binding-cells = <0>;
-            bindings = <
-                &kp SPACE
-                &kp LEFT
-            >;
-        };
-
-        space_right: space_right_macro {
-            compatible = "zmk,behavior-macro";
-            label = "SPACE_RIGHT";
-            #binding-cells = <0>;
-            bindings = <
-                &kp SPACE
-                &kp RIGHT
-            >;
-        };
     };
 
     macros {
@@ -118,7 +98,7 @@ ZMK_TRI_STATE(lang_swap, bindings = <&kt LCTRL>, <&kp SPACE>, <&kt LCTRL>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp RIGHT>
+                , <&macro_tap &kp LEFT>
                 , <&macro_release &kp LCTRL>
                 ;
         };
@@ -128,7 +108,7 @@ ZMK_TRI_STATE(lang_swap, bindings = <&kt LCTRL>, <&kp SPACE>, <&kt LCTRL>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp LEFT>
+                , <&macro_tap &kp RIGHT>
                 , <&macro_release &kp LCTRL>
                 ;
         };

@@ -205,7 +205,7 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         //│  F7      │  F5      │  F3      │ F1       │  F9      │   │  F8      │  F12     │  F2      │  F4      │  F6      │
             &kp F7     &kp F5     &kp F1     &kp F1     &kp F9         &kp F8     &kp F12     &kp F2     &kp F4     &kp F6
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &to 4      &trans         &trans     &trans
+                                             &trans     &to 4          &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
